@@ -1,5 +1,6 @@
 
-![screen-shot-2011-12-12-at-4-12-52-pm](https://github.com/user-attachments/assets/f7560062-23fb-4556-9c1f-adc1f1aa4f21)
+![fp6hcm9xffvd1](https://github.com/user-attachments/assets/0a2a3a6b-651a-47aa-b274-0934455d3546)
+
 
 
 Tecnología,Descripción

@@ -1,4 +1,6 @@
 
+![screen-shot-2011-12-12-at-4-12-52-pm](https://github.com/user-attachments/assets/a62014b2-e212-4c62-944f-da3506ea4e8b)
+
 Tecnología,Descripción
 Python,Lenguaje de programación principal.
 Pytest,Framework para la ejecución y gestión de los tests.

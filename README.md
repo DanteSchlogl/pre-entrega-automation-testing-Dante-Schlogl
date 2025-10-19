@@ -1,5 +1,5 @@
 
-![screen-shot-2011-12-12-at-4-12-52-pm](https://github.com/user-attachments/assets/a62014b2-e212-4c62-944f-da3506ea4e8b)
+![screen-shot-2011-12-12-at-4-12-52-pm](https://github.com/user-attachments/assets/a62014b2-e212-4c62-944f-da3506ea4e8b alt="Texto Alternativo" width="500" height="auto")
 
 Tecnología,Descripción
 Python,Lenguaje de programación principal.

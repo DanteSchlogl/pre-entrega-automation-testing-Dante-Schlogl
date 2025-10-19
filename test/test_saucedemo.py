@@ -1,39 +1,52 @@
 import pytest
+from selenium.webdriver.common.by import By 
+import sys
+import os
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
+
+from utils.helpers import login_saucedemo, get_driver
 
 
 
 @pytest.fixture
-  
-
-def  test_login():
-
-    # logeo de  usuario  con username y pass
-    #click boton de login
-
-    #rediriga a la pagina de inventario
-    #vereficar el titulo de la pagina
+def driver():
+    driver = get_driver()
+    yield driver
+    driver.quit()
+    
 
 
 
-def test_catalogo():
-
-#logeo de usuario con username y pass
-#click boton de login
-
-#podamos verificar el titulo pero del html
-
-#comprobare si existen productos en la pagina visibles (usando len())
-#verifica si hay titulo, parrafo o productos (opcional)
-#verificar elementos importantes de la pagina
+#def test_login(driver):
+ #   login_saucedemo(driver)
+  #  assert "/inventory.html" in driver.current_url
+    #titulo = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
+    #assert titulo == 'Products'
 
 
-def test_carrito(): 
+def test_catalogo(driver):
+    login_saucedemo(driver)
+    pruductos = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+    driver.save_screenshot("elegir3ItemsDeCatalogo.png")
+    assert len(pruductos)  > 0
 
-# logeo de  usuario  con username y pass
-#click boton de login
 
-# levarme a la pagina de carrito de compras
-#verificar incremento del carrito al agrgar un producto
+def test_carrito(driver):
+    login_saucedemo(driver  )
+    
+    products = driver.find_elements(By.CLASS_NAME,'inventory_item')
+    total_products = len(products)
 
-#comprobar que el carrito aparezca correctamente el             
+    if total_products >=3:
+       products[0].find_element(By.TAG_NAME, 'button').click()
+       products[1].find_element(By.TAG_NAME, 'button').click()
+       products[2].find_element(By.TAG_NAME, 'button').click() 
+
+    driver.save_screenshot("verificarItems3.png")    
+    
+    badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
+    assert badge == "3"     
+
+   
+    
